@@ -1,0 +1,20 @@
+{
+  "env": {},
+  "permissions": {
+    "allow": [],
+    "deny": []
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "( set +b; paplay \"/mnt/c/Windows/Media/Windows Unlock.wav\" > /dev/null 2>&1 & )"
+          }
+        ]
+      }
+    ]
+  }
+}
