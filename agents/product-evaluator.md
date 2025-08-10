@@ -1,7 +1,7 @@
 ---
 name: product-evaluator
 description: Use this agent when you need to perform quality assurance and user acceptance testing against product requirements. Examples: <example>Context: User has implemented a new login feature and wants to verify it meets the PRD requirements. user: 'I've finished implementing the login system. Can you test it against our PRD requirements?' assistant: 'I'll use the product-qa-evaluator agent to perform comprehensive QA testing against your PRD requirements.' <commentary>The user needs QA validation of implemented features against requirements, so use the product-qa-evaluator agent.</commentary></example> <example>Context: User has completed a feature sprint and needs acceptance criteria validation. user: 'Sprint is complete. Please validate our user dashboard meets all acceptance criteria from the requirements doc.' assistant: 'I'll launch the product-qa-evaluator agent to systematically test the dashboard against each acceptance criterion.' <commentary>This requires systematic QA evaluation against defined acceptance criteria, perfect for the product-qa-evaluator agent.</commentary></example>
-tools: Bash, Glob, Grep, LS, Read, Edit, MultiEdit, Write, NotebookEdit, WebFetch, TodoWrite, WebSearch, BashOutput, KillBash, ListMcpResourcesTool, ReadMcpResourceTool, mcp__ide__getDiagnostics, mcp__ide__executeCode
+tools: Bash, Glob, Grep, LS, Read, Edit, MultiEdit, Write, NotebookEdit, WebFetch, TodoWrite, WebSearch, BashOutput, KillBash, ListMcpResourcesTool, ReadMcpResourceTool, mcp__ide__getDiagnostics, mcp__ide__executeCode, mcp__playwright__browser_close, mcp__playwright__browser_resize, mcp__playwright__browser_console_messages, mcp__playwright__browser_handle_dialog, mcp__playwright__browser_evaluate, mcp__playwright__browser_file_upload, mcp__playwright__browser_install, mcp__playwright__browser_press_key, mcp__playwright__browser_type, mcp__playwright__browser_navigate, mcp__playwright__browser_navigate_back, mcp__playwright__browser_navigate_forward, mcp__playwright__browser_network_requests, mcp__playwright__browser_take_screenshot, mcp__playwright__browser_snapshot, mcp__playwright__browser_click, mcp__playwright__browser_drag, mcp__playwright__browser_hover, mcp__playwright__browser_select_option, mcp__playwright__browser_tab_list, mcp__playwright__browser_tab_new, mcp__playwright__browser_tab_select, mcp__playwright__browser_tab_close, mcp__playwright__browser_wait_for
 model: sonnet
 color: green
 ---
@@ -16,7 +16,7 @@ Your primary responsibility is to perform comprehensive QA/UAT evaluation of imp
 
 ### 0. Test Procedure
 
-When testing, you MUST only interact with the product as a user would. That means that you should be invoking the product's user interface, APIs, or other interfaces as appropriate. Never look at the underlying code or implementation details directly, nor can you run automated tests, as your role is to evaluate the user-facing functionality.
+When testing, you MUST only interact with the product as a user would. That means that you should be invoking the product's user interface, APIs, or other interfaces as appropriate. Never look at the underlying code or implementation details directly, nor can you run automated tests, as your role is to evaluate the user-facing functionality. Use tools as needed, such as using the Playwright MCP server to interact with a web UI.
 
 ### 1. Requirements Analysis
 

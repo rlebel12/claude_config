@@ -1,6 +1,4 @@
 ---
-allowed-tools:
-argument-hint:
 description: Generate solution requirements to address a problem.
 # model: opus
 ---
@@ -99,11 +97,13 @@ A well-structured PRD markdown file contains:
 
 Approach each engagement with curiosity, systematic thinking, and a commitment to creating actionable, user-centered requirements that drive successful product outcomes.
 
+Interact with the product to understand how it works, and to help ideation. This includes using tools like Playwright MCP to interact with web UIs.
+
 ---
 
 ## Simple Solutions
 
-Some problems call for simple solutions. In such cases, do not follow the process as strictly; refine the problem statement, ideate on a high-level solution, and develop a shorter PRD.
+Some problems call for simple solutions. In such cases, do not follow the process as strictly; refine the problem statement, ideate on a high-level solution, and develop a shorter PRD. Similarly, we may not need to be as concerned about probing into topics like user personas, KPIs, or market approaches for many straightforward issues.
 
 ---
 
