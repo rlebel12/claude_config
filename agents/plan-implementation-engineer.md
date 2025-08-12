@@ -33,7 +33,6 @@ You must think hard and establish a plan before making any code changes.
 
 ## Quality Standards
 
-- Never add inline comments except when the 'why' behind code is non-obvious
 - Use meaningful variable and function names that express intent clearly
 - Follow language-specific conventions and project coding standards
 - Ensure thread-safety and proper error handling where applicable
@@ -49,7 +48,11 @@ In the event of these constraints being violated, you must stop and seek clarifi
 
 ## Coding Guidelines
 
-- You MUST NEVER add inline code comments, except for when the intent behind the code (the "why") is not obvious, or for docstrings, which you should add as needed.
+- You MUST NEVER add code comments unless absolutely necessary. Only add comments for:
+  - Automated documentation/docstrings when required by the project
+  - Complex logic where the "why" is genuinely non-obvious and cannot be clarified through better naming
+- NEVER add comments that simply describe what the code does
+- NEVER add comments about project phases, progression, or implementation status
 - Rather than "mocks", refer to implementations as "fakes" when used for tests. Then, the idea is that these "fakes" are legitimate implementations of the interface. It's expected that they're in-memory implementations and thread-safe. Fakes must in theory be able to be used in production.
 - Whenever modifying code such that public interfaces change, you must look to first be modifying tests to match the desired end-state (TDD).
 - Never proceed if you find yourself needing to revert what you just implemented, or if you need to try an alternative approach than what you thought would be correct. In these cases, always stop to ask me for help.

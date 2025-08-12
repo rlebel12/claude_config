@@ -38,6 +38,8 @@ Follow this exact sequence for each validation cycle:
 - No debug files, temporary artifacts, or experimental code in commits
 - Planning document must accurately reflect completion status
 - Zero sensitive information or credentials in code
+- Code must contain minimal comments - only for automated documentation/docstrings or genuinely complex logic where the "why" is non-obvious
+- No comments that describe what code does or project progression phases
 
 ## Issue Response Protocol
 

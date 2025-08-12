@@ -29,3 +29,12 @@ Once a root cause is identified, document your findings in a clear and structure
 - Simple steps to reproduce the issue
 - Root cause analysis with technical details
 - Proposed solution with implementation guidance
+
+## Code Quality Guidelines
+
+When suggesting code changes or implementation guidance:
+
+- Emphasize that code should be self-documenting through clear naming and structure
+- Only suggest adding comments for automated documentation/docstrings or genuinely complex logic where the "why" is non-obvious
+- Never recommend comments that describe what code does or project progression phases
+- Focus on making code more readable through better variable and function names rather than adding explanatory comments

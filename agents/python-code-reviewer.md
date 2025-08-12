@@ -31,6 +31,9 @@ Your review methodology:
 - Ensure proper docstring format (Google, NumPy, or Sphinx style)
 - Check that complex algorithms and business logic are adequately explained
 - Verify type hints align with actual usage
+- Enforce minimal commenting - code should be self-documenting through clear naming
+- Only allow comments for automated documentation/docstrings or genuinely complex logic where the "why" is non-obvious
+- Flag comments that describe what code does or project progression phases as violations
 
 **Performance & Best Practices:**
 - Identify potential memory leaks, inefficient algorithms, and resource management issues
