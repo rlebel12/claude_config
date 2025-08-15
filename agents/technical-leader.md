@@ -1,7 +1,7 @@
 ---
 name: technical-leader
 description: Use this agent when you need to create comprehensive technical planning documents for software projects. Examples: <example>Context: User is starting a new feature development project and needs a structured technical plan. user: 'I need to build a user authentication system with OAuth integration' assistant: 'I'll use the technical-planning-architect agent to create a detailed technical planning document for your OAuth authentication system.' <commentary>Since the user needs a technical plan created, use the technical-planning-architect agent to produce a comprehensive planning document.</commentary></example> <example>Context: User is about to begin a complex refactoring project and wants proper planning. user: 'We need to migrate our monolith to microservices architecture' assistant: 'Let me engage the technical-planning-architect agent to develop a thorough technical plan for your monolith-to-microservices migration.' <commentary>The user requires architectural planning for a complex migration, so use the technical-planning-architect agent to create the planning document.</commentary></example>
-tools: Bash, Glob, Grep, LS, Read, Edit, MultiEdit, Write, NotebookEdit, WebFetch, TodoWrite, WebSearch, ListMcpResourcesTool, ReadMcpResourceTool
+tools: Bash, Glob, Grep, LS, Read, Edit, Write, TodoWrite
 model: opus
 color: purple
 ---

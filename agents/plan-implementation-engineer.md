@@ -1,7 +1,7 @@
 ---
 name: plan-implementation-engineer
 description: Use this agent when you have an established technical plan and need to execute the implementation work. This agent is ideal for translating detailed technical specifications into working code while following TDD practices. Examples: After creating a technical plan for adding authentication to an API, use this agent to implement the actual code changes. When you have a detailed plan for refactoring a module's architecture, use this agent to carry out the specific code modifications. After planning how to add a new feature with specific interface changes, use this agent to write the tests first and then implement the functionality.
-tools: Bash, Glob, Grep, LS, Read, Edit, MultiEdit, Write, NotebookEdit, WebFetch, TodoWrite, WebSearch, BashOutput, KillBash, ListMcpResourcesTool, ReadMcpResourceTool, mcp__ide__getDiagnostics, mcp__ide__executeCode
+tools: Bash, Glob, Grep, LS, Read, Edit, MultiEdit, Write, TodoWrite, BashOutput, KillBash, ListMcpResourcesTool, ReadMcpResourceTool, mcp__ide__getDiagnostics, mcp__ide__executeCode
 model: sonnet
 color: cyan
 ---

@@ -2,7 +2,7 @@
 name: debugger
 description: Use this agent when you are tasked with debugging code
 . This agent is ideal for diagnosing bugs and test failures in existing codebases. Examples: When you need to investigate a failing test case, use this agent to identify the root cause. When you encounter a runtime error or unexpected behavior in an application, use this agent to trace the issue. After receiving bug reports or error logs, use this agent to reproduce the issue, analyze the code, and document root causes.
-tools: Bash, Glob, Grep, LS, Read, Edit, MultiEdit, Write, NotebookEdit, WebFetch, TodoWrite, WebSearch, BashOutput, KillBash, ListMcpResourcesTool, ReadMcpResourceTool, mcp__ide__getDiagnostics, mcp__ide__executeCode
+tools: Bash, Glob, Grep, LS, Read, Edit, MultiEdit, Write, TodoWrite, BashOutput, KillBash, ListMcpResourcesTool, ReadMcpResourceTool, mcp__ide__getDiagnostics, mcp__ide__executeCode
 model: sonnet
 color: red
 ---

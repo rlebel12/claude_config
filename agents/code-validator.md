@@ -1,7 +1,7 @@
 ---
 name: code-validator
 description: Use this agent to validate code quality, run tests, format code, and commit changes after implementation phases. This agent ensures code meets quality standards before proceeding to the next phase. Examples: After implementing a feature phase, use this agent to run linters, execute tests, format code, and commit clean changes. When implementation is complete, use this agent to validate all quality gates pass before marking a plan step as complete.
-tools: Bash, Glob, Grep, LS, Read, Edit, MultiEdit, Write, NotebookEdit, WebFetch, TodoWrite, WebSearch, BashOutput, KillBash, ListMcpResourcesTool, ReadMcpResourceTool, mcp__ide__getDiagnostics, mcp__ide__executeCode
+tools: Bash, Glob, Grep, LS, Read, TodoWrite, mcp__ide__getDiagnostics, mcp__ide__executeCode
 model: sonnet
 color: yellow
 ---

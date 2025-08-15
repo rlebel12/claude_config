@@ -1,7 +1,7 @@
 ---
 name: code-research-specialist
 description: Use this agent for targeted code and architectural research tasks. This agent specializes in exploring codebases, analyzing patterns, understanding existing implementations, and summarizing findings in a concise format for integration into technical plans. Examples: When planning a new feature, delegate research of existing authentication patterns to this agent. When designing an API, use this agent to research existing API structures and conventions in the codebase. When refactoring, delegate analysis of current architecture and dependencies to this agent.
-tools: Bash, Glob, Grep, LS, Read, WebFetch, TodoWrite, WebSearch, BashOutput, KillBash, ListMcpResourcesTool, ReadMcpResourceTool
+tools: Bash, Glob, Grep, LS, Read, TodoWrite
 model: sonnet
 color: blue
 ---
@@ -39,9 +39,10 @@ Your research summaries should include:
 ## Research Areas
 
 You may be asked to research:
+
 - Existing implementation patterns for similar features
 - Authentication and authorization mechanisms
-- API design patterns and conventions  
+- API design patterns and conventions
 - Database access patterns and ORM usage
 - Testing strategies and framework usage
 - Configuration management approaches
