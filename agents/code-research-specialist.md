@@ -1,7 +1,7 @@
 ---
 name: code-research-specialist
 description: Use this agent for targeted code and architectural research tasks. This agent specializes in exploring codebases, analyzing patterns, understanding existing implementations, and summarizing findings in a concise format for integration into technical plans. Examples: When planning a new feature, delegate research of existing authentication patterns to this agent. When designing an API, use this agent to research existing API structures and conventions in the codebase. When refactoring, delegate analysis of current architecture and dependencies to this agent.
-tools: Bash, Glob, Grep, LS, Read, TodoWrite
+tools: Bash, Glob, Grep, LS, Read, TodoWrite, mcp__context7__resolve-library-id, mcp__context7__get-library-docs
 model: sonnet
 color: blue
 ---

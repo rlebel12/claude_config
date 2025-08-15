@@ -1,137 +1,88 @@
 ---
-description: Orchestrates iterative project execution using specialized subagents with built-in validation and quality control.
+description: Execute project implementation with primary instance doing implementation and automatic validation for iterative refinement.
 # model: opus
 ---
 
 # Execute Command
 
-Orchestrates iterative project execution using specialized subagents with built-in validation and quality control.
+Execute project implementation where you (primary Claude instance) handle implementation directly while leveraging specialized validators for iterative quality improvement.
 
 ## Process
 
-Use the following process to guide project execution.
-
-### Beginning the Planning Process
+### Project Setup
 
 Start by prompting the user for:
 
 1. **Problem Statement**: What specific problem or requirement needs to be addressed?
 2. **Technical Plan**: The implementation plan (may be a document path, or ask user to provide/create one)
 
-### Iterative Execution Cycle
+### Implementation Workflow
 
 For each phase in the technical plan:
 
-0. **Research and Exploration Phase** (when needed)
+#### 1. **Research Phase** (when needed)
+- **Delegate to code-research-specialist** when you need to:
+  - Understand existing codebase architecture before implementation
+  - Search for specific patterns, functions, or implementations
+  - Explore unfamiliar code areas or dependencies
+  - Understand integration points between systems
+- Use research findings to inform your implementation approach
 
-   - **Always delegate to codebase exploration agent when**:
-     - Need to understand existing codebase architecture before implementation
-     - Searching for specific patterns, functions, or implementations
-     - Exploring unfamiliar code areas or dependencies
-     - Understanding integration points between systems
-   - Provide specific research objectives and expected deliverables
-   - Use research findings to inform implementation approach
+#### 2. **Implementation Phase**
+- **You implement** the code directly, focusing on functional correctness
+- Follow the language guidelines in CLAUDE.md for basic patterns
 
-1. **Implementation Phase**
+#### 3. **Sequential Refinement**
+- **Automatically invoke appropriate language reviewer** based on code implemented
+- **Apply reviewer feedback**:
+  - Critical issues: Always fix
+  - Important issues: Usually fix
+  - Optional issues: Apply selectively based on value
+- **Format code** using appropriate formatters
 
-   - Delegate to plan execution agent with the current phase details
-   - Provide clear scope and deliverables for this specific phase
-   - Ensure agent understands they should not proceed beyond the defined phase
-   - **If implementation requires code exploration**: delegate to exploration agent first
+#### 4. **Parallel Validation**
+- **Run in parallel** for efficiency:
+  - Execute test suites
+  - Run linters and static analysis
+  - Any other validation tools
+- Verify all parallel validation passes before proceeding
 
-2. **Validation Phase**
+#### 5. **Final Review** (for complex projects)
+- **Delegate to product-evaluator** for end-to-end validation against requirements
+- If issues found, return to implementation phase for fixes
 
-   - Delegate to testing and quality assurance agent to:
-     - Run all tests and ensure they pass
-     - Execute linters and static analysis (zero violations required)
-     - Format code according to project standards
-     - Update planning document marking phase complete
-     - Commit clean code changes (exclude debug/temp files)
-
-3. **Review Phase**
-
-   - **Multi-area projects**: Delegate to multiple specialized reviewers in parallel:
-     - Frontend changes: delegate to appropriate reviewer for frontend tech stack
-     - Backend changes: delegate to language-specific code reviewer
-     - Database changes: include in backend review with schema focus
-     - API changes: coordinate reviews across frontend/backend boundaries
-   - **Single-area projects**: Delegate to appropriate code review agent:
-     - For Go projects: use Go-specialized code reviewer
-     - For Python projects: use Python-specialized code reviewer
-   - Agent performs comprehensive code quality review
-   - **Consolidate feedback** from multiple reviewers when applicable
-   - If review identifies issues requiring code changes:
-     - Delegate back to plan execution agent to address review feedback
-     - Return to validation phase, then review phase again
-   - Repeat implementation → validation → review cycle until review approval
-
-4. **Issue Resolution Cycle** (if validation fails)
-
-   - If validation identifies bugs or test failures:
-     - Delegate to debugging specialist agent to diagnose issues
-     - Delegate back to plan execution agent to apply fixes
-     - Return to validation phase
-   - Repeat until validation passes
-
-5. **Phase Completion**
-   - Only proceed to next phase after successful validation AND review approval
-   - Ensure planning document accurately reflects completed work
-
-### Final Validation
-
-After all phases complete:
-
-- Delegate to product quality assurance agent for comprehensive requirements validation
-- Agent will test against original problem statement and requirements
-- If evaluation fails, return to appropriate implementation phase for corrections
-
-### Success Criteria
-
-Project execution is complete when:
-
-- All technical plan phases implemented, validated, and reviewed
-- All tests passing consistently
-- Code quality standards met through rigorous review process
-- Product evaluation confirms all requirements satisfied
-- Planning document reflects 100% completion
+#### 6. **Phase Completion**
+- Update planning document with completed work
+- Commit clean, production-ready code
+- Proceed to next phase or project completion
 
 ## Key Principles
 
-- **Phase-by-Phase**: Never implement multiple phases simultaneously
-- **Quality Gates**: Validation and review must both pass before advancing
-- **Review Standards**: Code must meet professional quality standards through expert review
-- **Documentation**: Keep planning document updated throughout
-- **Clean Commits**: Only commit production-ready code
-- **User Requirements**: Final validation against original problem statement
+- **Primary Implementation**: You handle all code implementation directly
+- **Automatic Validation**: Always invoke language validators after implementation
+- **Iterative Refinement**: Apply validator feedback before proceeding
+- **Selective Fixes**: Prioritize critical and important improvements
+- **Clean Commits**: Only commit refined, production-ready code
 
-## Delegation Strategy
+## Success Criteria
 
-### When to Delegate Research
+Project execution is complete when:
 
-- **Always delegate** when you need to explore or understand existing code
-- Use codebase exploration agent for research and understanding
-- Delegate research **before** implementation when working with unfamiliar systems
-- Provide specific search criteria and research objectives
+- All technical plan phases implemented with validation feedback applied
+- All tests passing consistently  
+- Code meets language-specific quality standards
+- Product functionality validated against requirements
+- Planning document reflects 100% completion
 
-### Multi-Area Review Delegation
+## Adaptive Complexity
 
-- **Identify project scope** early: frontend, backend, database, API, infrastructure
-- **Delegate to multiple reviewers** when changes span multiple areas
-- Run reviews **in parallel** for efficiency
-- **Consolidate feedback** from all reviewers before proceeding
-- Ensure **cross-boundary consistency** (e.g., API contracts match frontend usage)
+### Simple Tasks (bug fixes, minor features)
+- Implement → Validate → Test → Complete
+- Skip complex orchestration for straightforward changes
 
-### Agent Selection by Function
+### Complex Projects (major features, architecture changes)  
+- Full phase-by-phase approach with comprehensive validation
+- Research phase for unfamiliar areas
+- Final product evaluation against requirements
 
-- **Codebase exploration**: Use research specialist for understanding existing code
-- **Plan execution**: Use implementation specialist for focused development
-- **Quality assurance**: Use testing specialist for validation and standards
-- **Code review**: Use language-specific reviewers (Go specialist for Go, Python specialist for Python, etc.)
-- **Issue diagnosis**: Use debugging specialist for problem resolution
-- **Product validation**: Use QA specialist for requirements verification
-
-## Command Usage
-
-```
-Execute project implementation following established technical plan with iterative validation and quality control.
-```
+Your role is to maintain context and conversational flow while ensuring code quality through automatic validation and selective refinement based on specialized feedback.
